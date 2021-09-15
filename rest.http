@@ -1,0 +1,11 @@
+# auth
+GET http://localhost:8787/auth
+
+# current state of blayback
+GET http://localhost:8787/now-playing
+
+
+# top-10 tracks
+GET http://localhost:8787/top-tracks
+
+

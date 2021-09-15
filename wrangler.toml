@@ -1,0 +1,16 @@
+name = "spotify-worker-dev"
+type = "webpack"
+webpack_config = "webpack.config.js"
+
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[vars]
+ENV = "development"
+
+[env.production]
+name = "spotify-worker"
+[env.production.vars]
+ENV = "production"
