@@ -19,7 +19,7 @@ export async function handleTopTracks() {
 
 function formatTopTracks({ items }) {
   return items.slice(0, 10).map(({ name, album, artists, external_urls }) => ({
-    name,
+    track: name,
     album: album.name,
     artist: artists.map(a => a.name).join(', '),
     coverUrl: album.images[0].url,
