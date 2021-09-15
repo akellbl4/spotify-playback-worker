@@ -13,7 +13,7 @@ export async function handleNowPlaying() {
 }
 
 function formatTrackInfo({ progress_ms: progress, item, is_playing: isPlaying = false }) {
-  const { duration_ms: duration, name: track, artists = [], album } = item
+  const { duration_ms: duration, name: track, artists = [], album, external_urls } = item
   const artist = artists.map(({ name }) => name).join(', ')
   const cover = album.images[album.images.length - 1]
   const coverUrl = cover ? cover.url : null
