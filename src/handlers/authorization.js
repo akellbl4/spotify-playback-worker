@@ -32,7 +32,7 @@ export async function handleAuthorization({ url }) {
 }
 
 export async function getAccessToken() {
-  if (!SPOTIFY_REFRESH_TOKEN) {
+  if (!global.SPOTIFY_REFRESH_TOKEN) {
     throw new Error('No refresh token.')
   }
 
