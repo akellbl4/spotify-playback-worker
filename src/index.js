@@ -34,10 +34,10 @@ async function handleRequest(request) {
     case url.pathname.endsWith('/auth'): {
       return await handleAuthorization(ctx)
     }
-    case url.endsWith('/now-playing'): {
+    case url.pathname.endsWith('/now-playing'): {
       return await handleNowPlaying(ctx)
     }
-    case url.endsWith('/top-tracks'): {
+    case url.pathname.endsWith('/top-tracks'): {
       return await handleTopTracks(ctx)
     }
     default: {
