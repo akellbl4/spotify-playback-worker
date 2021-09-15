@@ -31,20 +31,16 @@ async function handleRequest(request) {
   const ctx = { req: request, url }
 
   switch (true) {
-    case url.pathname === '/auth': {
+    case url.pathname.endsWith('/auth'): {
       return await handleAuthorization(ctx)
     }
-    case url.pathname === '/now-playing': {
+    case url.endsWith('/now-playing'): {
       return await handleNowPlaying(ctx)
     }
-    case url.pathname === '/top-tracks': {
+    case url.endsWith('/top-tracks'): {
       return await handleTopTracks(ctx)
     }
     default: {
-      if (url.pathname !== '/') {
-        return new Response(null, { status: 404 })
-      }
-
       if (!global.SPOTIFY_CLIENT_ID) {
         return Response.html(
           `Please set <pre style="display:inline">SPOTIFY_CLIENT_ID</pre> in worker environment`
