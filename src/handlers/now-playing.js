@@ -17,6 +17,7 @@ function formatTrackInfo({ progress_ms: progress, item, is_playing: isPlaying = 
   const artist = artists.map(({ name }) => name).join(', ')
   const cover = album.images[album.images.length - 1]
   const coverUrl = cover ? cover.url : null
+  const url = external_urls.spotify
 
-  return { progress, duration, track, artist, isPlaying, coverUrl }
+  return { progress, duration, track, artist, isPlaying, coverUrl, url }
 }
